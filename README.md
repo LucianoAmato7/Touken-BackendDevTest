@@ -40,7 +40,7 @@ Ubicado en `/middlewares/routeNotFound.ts` | Middleware genérico para manejar r
 Devuelve un mensaje JSON con detalles del error (ruta y método HTTP no encontrados) con código de estado 404.
 
 ### user.auth
-Ubicado en `/middlewares/user.auth.ts` | 
+Ubicado en `/middlewares/user.auth.ts` | Verifica la autenticación del usuario y asigna su ID al Request para consultas posteriores.
 
 # Instrucciones de uso
 
@@ -54,9 +54,10 @@ Ubicado en `/middlewares/user.auth.ts` |
 
 ## Pasos para ejecutar el proyecto
 
-1. Configurar la conexión a la base de datos
-   Crea un archivo `.env` en la raíz del proyecto y agrega la siguiente línea para configurar la URL de conexión de la base de datos:  
-   `DATABASE_URL="postgresql://usuario:contraseña@localhost:puerto/nombre_de_base_de_datos`
+1. Configurar la conexión a la base de datos.
+
+- Crea un archivo `.env` en la raíz del proyecto y agrega la siguiente línea para configurar la URL de conexión de la base de datos:  
+`DATABASE_URL="postgresql://usuario:contraseña@localhost:puerto/nombre_de_base_de_datos`
 
 2. `npm install` | Instalar dependencias.
 
