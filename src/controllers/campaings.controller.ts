@@ -4,13 +4,15 @@ import CampaignsService from "../services/campaings.services";
 export const listCampaigns_controller = async (req: Request, res: Response) => {
 
     try {
-        //recuperar id de la persona logeada
-        //ver si enviar el id por parametros de tura o que lo saque de la logica (middleware) de autenticacion.
-        const userId = 1;
+        // El usuario autenticado se encuentra en req.user (ver middleware user.auth.ts)
+        const userId = req.user;
+        if (typeof userId !== 'number') {
+            return res.status(401).json({ error: "User ID is missing or invalid" });
+          }
         const campaigns = await CampaignsService.listCampaigns_Services(userId);
         res.json(campaigns);
     } catch (error) {
         console.log(`Error in Controller of Campaings | ${error}`);
-        res.status(400).json({ error });
+        res.status(500).json({ error });
     }
 };
