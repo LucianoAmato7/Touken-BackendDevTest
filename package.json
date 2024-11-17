@@ -1,0 +1,28 @@
+{
+  "name": "touken-backenddevtest",
+  "version": "1.0.0",
+  "description": "Touken-BackendDevTest",
+  "main": "src/Server.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/Server.js",
+    "dev": "nodemon src/Server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.9.0",
+    "prisma": "^5.22.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}

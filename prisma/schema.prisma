@@ -1,0 +1,81 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Tribes {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  users       Users[]
+}
+
+model Users {
+  id          Int      @id @default(autoincrement())
+  tribeId     Int?
+  name        String
+  email       String   @unique
+  password    String
+  role        String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  tribe       Tribes?  @relation(fields: [tribeId], references: [id])
+  campaigns   Campaigns[]
+  responses   Responses[]
+  userAudiences UserAudiences[]
+}
+
+model Campaigns {
+  id          Int      @id @default(autoincrement())
+  userOwnerId Int
+  name        String
+  status      String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  user        Users    @relation(fields: [userOwnerId], references: [id])
+  questions   Questions[]
+}
+
+model Questions {
+  id          Int      @id @default(autoincrement())
+  campaignId  Int
+  description String
+  campaign    Campaigns @relation(fields: [campaignId], references: [id])
+  responses   Responses[]
+}
+
+model Responses {
+  id          Int      @id @default(autoincrement())
+  questionId  Int
+  userId      Int
+  description String
+  timestamp   DateTime @default(now())
+  question    Questions @relation(fields: [questionId], references: [id])
+  user        Users    @relation(fields: [userId], references: [id])
+}
+
+model Audiences {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String?
+  timestamp   DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userAudiences UserAudiences[]
+}
+
+model UserAudiences {
+  id             Int        @id @default(autoincrement())
+  userId         Int
+  audienceId     Int
+  roleInAudience String
+  joinedAt       DateTime   @default(now())
+  user           Users      @relation(fields: [userId], references: [id])
+  audience       Audiences  @relation(fields: [audienceId], references: [id])
+}
