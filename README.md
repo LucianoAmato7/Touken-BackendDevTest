@@ -6,7 +6,7 @@ Este proyecto de API está diseñado siguiendo una arquitectura modular basada e
 
 ## Estructura
 
-### **Server.ts**
+### **index.ts**
 Este archivo es el punto de entrada de la aplicación. Se encarga de inicializar y configurar el servidor Express, gestionando la configuración básica del servidor y el manejo de errores globales.
 
 ### **Routes**
@@ -93,4 +93,7 @@ Para probar los endpoints de la API, se utiliza Jest junto con Supertest, herram
 
 ## Observaciones:
 
-Se detectó un problema de compatibilidad entre express v4 y @types/express v5. Para evitar errores, se recomienda usar la versión @types/express v4.17.21, que es compatible con express v4.
+- Se detectó un problema de compatibilidad entre express v4 y @types/express v5. Para evitar errores, se recomienda usar la versión @types/express v4.17.21, que es compatible con express v4.
+
+- Asegúrate de que la versión de jest especificada en tu archivo package.json coincida con la versión compatible de @types/jest. Las versiones correctas a utilizar son: **"@types/jest": "^29.5.14"** - **"jest": "^29.5.0"**.
+Esto garantiza la compatibilidad y evita posibles problemas durante las pruebas.
