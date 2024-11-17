@@ -67,13 +67,29 @@ Ubicado en `/middlewares/user.auth.ts` | Verifica la autenticación del usuario 
 
 5. `npx ts-node prisma/seed.ts` | Pre-cargar datos de prueba (opcional).
 
-6. `npx run dev` | Iniciar el proyecto en modo desarrollo.
+6. `npm run dev` | Iniciar el proyecto en modo desarrollo.
 
 ### Para producción
 
-1. `npx run build` | Generar los archivos compilados JS en el directorio `dist`.
+1. `npm run build` | Generar los archivos compilados JS en el directorio `dist`.
 
-2. `npx run start` | Iniciar el proyecto en modo producción.
+2. `npm run start` | Iniciar el proyecto en modo producción.
+
+## Testeo de la API
+
+Para probar los endpoints de la API, se utiliza Jest junto con Supertest, herramientas que permiten realizar pruebas automatizadas sobre las rutas y verificar su correcto funcionamiento.
+
+### Pasos para realizar las pruebas:
+
+1. `npm run start` o `npm run dev` | Asegúrate de que el servidor de la API esté en ejecución.
+
+2. `npm run test` | En una terminal aparte, ejecuta los tests.
+
+### Herramientas utilizadas:
+
+- **Jest**: Framework de pruebas que facilita la ejecución y organización de los tests.
+
+- **Supertest**: Librería utilizada para realizar solicitudes HTTP y validar las respuestas de la API.
 
 ## Observaciones:
 
