@@ -76,4 +76,4 @@ Ubicado en `/middlewares/user.auth.ts` |
 
 ## Observaciones:
 
-Se detectó un problema de compatibilidad entre express v4 y @types/express v5. Para evitar errores, se recomienda usar la versión `@types/express v4.17.21`, que es compatible con express v4.
+Se detectó un problema de compatibilidad entre express v4 y @types/express v5. Para evitar errores, se recomienda usar la versión @types/express v4.17.21, que es compatible con express v4.
