@@ -2,11 +2,11 @@
   "name": "touken-backenddevtest",
   "version": "1.0.0",
   "description": "Touken-BackendDevTest",
-  "main": "src/Server.ts",
+  "main": "src/index.ts",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/src/Server.js",
-    "dev": "nodemon src/Server.ts",
+    "start": "node dist/src/index.js",
+    "dev": "nodemon src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
